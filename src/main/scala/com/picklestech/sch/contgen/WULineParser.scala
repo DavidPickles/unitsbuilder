@@ -30,11 +30,11 @@ class WULineParser(val wUFactory:WUFactory) {
 
   private def addToState(name:String, value:String)  {
     name match {
-      case "title" => state.title = Option(value)
-      case "sub" => state.subject = Option(value)
-      case "yg" => state.yearGroup = Option(value)
-      case "tt" => state.topics = Option(value.split("""\s*\|\s*"""))
-      case "numLsns" => state.numOfLsns = Option(value.toInt)
+      case "title" => state.title =Some(value)
+      case "sub" => state.subject = Some(value)
+      case "yg" => state.yearGroup = Some(value)
+      case "tt" => state.topics = Some(value.split("""\s*\|\s*"""))
+      case "numLsns" => state.numOfLsns = Some(value.toInt)
     }
 
 

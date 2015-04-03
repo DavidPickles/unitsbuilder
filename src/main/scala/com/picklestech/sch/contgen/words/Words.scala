@@ -4,21 +4,19 @@ package com.picklestech.sch.contgen.words
  * Created by davidpickles on 27/03/15.
  * Would like to replace use of String for paras and sentences with this.
  */
-class Words(val content:String) {
+trait Words {
 
-  def addHtmlParaMarkup():Words = {
-    this
-  }
+  def content:String
 
-  def removeHtmParalMarkup():Words = {
-    this
-  }
+  def toHtmlParas:HtmlParas
 
-  def extractSentence(numWds:Int):Words = {
-    this
-  }
+  def toPlaintextParas:PlaintextParas
 
-  def extractPhrase(numWds:Int, captialise: Boolean, includeFinalStop:Boolean):Words = {
-    this
-  }
+  def toSentence(numWds:Int):Sentence
+
+  def toPhrase(numWds:Int, captialise: Boolean, includeFinalStop:Boolean):Phrase
+
+  def toTitle(includeFinalStop: Boolean):Title
+
+  override def toString():String = content
 }
